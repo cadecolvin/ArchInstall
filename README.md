@@ -31,6 +31,11 @@ $ pacman -S xfce4 xfce4-goodies
 $ pacman -S i3-wm i3blocks i3lock i3status
 ```
 
+Add the fonts that I like
+```bash
+$ pacman -S powerline-fonts
+```
+
 Install a bunch of Media-Codecs
 ```bash
 $ pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav 
