@@ -29,6 +29,7 @@ Add the GUI stuff
 $ pacman -S xorg xorg-server rxvt-unicode
 $ pacman -S xfce4 xfce4-goodies
 $ pacman -S i3-wm i3blocks i3lock i3status
+$ pacman -S dmenu
 ```
 
 Add the fonts that I like
