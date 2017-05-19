@@ -41,7 +41,7 @@ $ pacman -S gecko-mediaplayer dvd+rw-tools dvdauthor dvgrab libdvdread libdvdnav
 ## Add User
 Add myself as a user
 ```bash
-$ useradd -m -g wheel -s /bin/zsh ccolvin
+$ useradd -m -G wheel -s /bin/zsh $username
 ```
 
 Be sure to add 'wheel' as a sudoer. The sudoer file **MUST** be edited using the following command.
