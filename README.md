@@ -2,7 +2,7 @@
 After completing the install by following the steps on the [Arch Wiki](https://wiki.archlinux.org/index.php/Installation_guide), I use the following steps to complete my desktop setup.
 
 ## Base Packages
-Before running any scripts, Git must be installed.
+Before anything else, Git must be installed.
 ```bash
 $ pacman -S git
 ```
