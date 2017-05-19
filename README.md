@@ -33,7 +33,9 @@ $ pacman -S i3-wm i3blocks i3lock i3status
 
 Add the fonts that I like
 ```bash
-$ pacman -S powerline-fonts
+$ git clone https://aur.archlinux.org/powerline-fonts-git.git
+$ cd powerline-fonts-git
+$ makepkg -si
 ```
 
 Install a bunch of Media-Codecs
