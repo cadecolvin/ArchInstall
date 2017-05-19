@@ -9,8 +9,19 @@ $ pacman -S git
 
 Once Git is installed, continue by installing a few more essential programs.
 ```bash
-$ pacman -S base-devel dkms
+$ pacman -S base-devel dkms linux-headers
 $ pacman -S python sudo vim zsh
+```
+
+If this is on a MacBook, install the following driver for wireless
+```bash
+$ pacman -S broadcom-wl-dkms
+```
+
+If installing on a laptop, the following programs will enable connecting to wireless networks.
+```bash
+$ pacman -S wpa_supplicant wpa_actiond
+$ pacman -S wifi-menu
 ```
 
 Add the GUI stuff
@@ -37,3 +48,6 @@ Be sure to add 'wheel' as a sudoer. The sudoer file **MUST** be edited using the
 ```bash
 $ visudo
 ```
+
+## Dotfile Setup
+Clone the dotfiles from this [repo](https://github.com/cadecolvin/dotfiles) and run the setup script.
