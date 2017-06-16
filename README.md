@@ -24,6 +24,13 @@ $ pacman -S wpa_supplicant wpa_actiond
 $ pacman -S wifi-menu
 ```
 
+Also, use TLP for power management
+```bash
+$ pacman -S tlp
+$ systemctl enable tlp.service
+$ systemctl enable tlp-sleep.service
+```
+
 Add the GUI stuff
 ```bash
 $ pacman -S xorg xorg-server rxvt-unicode
