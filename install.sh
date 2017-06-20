@@ -24,11 +24,8 @@ pacman -S rxvt-unicode xorg xorg-server
 pacman -S i3-wm i3blocks i3lock i3status
 
 # Install the fonts that I like
-git clone https://aur.archlinux.org/powerline-fonts-git.git
-cd powerline-fonts-git
-makepkg -si
-cd ../
-rm -rf powerline-fonts-git
+pacman -S powerline
+pacman -S hack
 
 # Install Media Codecs
 pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2
