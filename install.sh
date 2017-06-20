@@ -4,7 +4,7 @@
 pacman -S git
 pacman -S base-devel dkms linux-headers
 pacman -S cowsay fortune-mod
-pacman -S python sudo vim zsh  
+pacman -S openssh python sudo vim zsh
 
 # For WiFi on Macbook
 pacman -S broadcom-wl-dkms
