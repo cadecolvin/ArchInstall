@@ -41,7 +41,5 @@ useradd -m -G wheel -s /bin/zsh ccolvin
 # Run visudo to add 'wheel' to sudoers
 visudo
 
-# Setup my dotfiles
-git clone https://github.com/cadecolvin/dotfiles
-cd dotfiles
-./setup
+# Set my password
+passwd ccolvin
