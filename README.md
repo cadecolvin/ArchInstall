@@ -10,7 +10,8 @@ $ pacman -S git
 Once Git is installed, continue by installing a few more essential programs.
 ```bash
 $ pacman -S base-devel dkms linux-headers
-$ pacman -S cowsay fortune-mod python sudo vim zsh
+$ pacman -S cowsay fortune-mod
+$ pacman -S python sudo vim zsh
 ```
 
 If this is on a MacBook, install the following driver for wireless
