@@ -1,5 +1,9 @@
 # Arch Configuration
 After completing the install by following the steps on the [Arch Wiki](https://wiki.archlinux.org/index.php/Installation_guide), I use the following steps to complete my desktop setup.
+The install script can also be downloaded via the following command:
+```bash
+$ curl https://raw.githubusercontent.com/cadecolvin/ArchInstall/master/install.sh > install.sh
+```
 
 ## Base Packages
 Before anything else, Git must be installed.
