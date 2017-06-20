@@ -70,4 +70,5 @@ $ visudo
 ```
 
 ## Dotfile Setup
+Exit the current session and log back in as the created user.
 Clone the dotfiles from this [repo](https://github.com/cadecolvin/dotfiles) and run the setup script.
