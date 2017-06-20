@@ -20,12 +20,13 @@ systemctl enable tlp-sleep.service
 tlp start
 
 # Install the GUI stuff
-pacman -S rxvt-unicode xorg xorg-server 
+pacman -S  xorg xorg-server 
 pacman -S i3-wm i3blocks i3lock i3status
+pacman -S rxvt-unicode
 
 # Install the fonts that I like
 pacman -S powerline
-pacman -S hack
+pacman -S ttf-hack
 
 # Install Media Codecs
 pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2

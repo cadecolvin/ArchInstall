@@ -38,7 +38,8 @@ $ systemctl enable tlp-sleep.service
 
 Add the GUI stuff
 ```bash
-$ pacman -S xorg xorg-server rxvt-unicode
+$ pacman -S xorg xorg-server 
+$ pacman -S rxvt-unicode
 $ pacman -S xfce4 xfce4-goodies
 $ pacman -S i3-wm i3blocks i3lock i3status
 $ pacman -S dmenu
@@ -46,9 +47,8 @@ $ pacman -S dmenu
 
 Add the fonts that I like
 ```bash
-$ git clone https://aur.archlinux.org/powerline-fonts-git.git
-$ cd powerline-fonts-git
-$ makepkg -si
+$ pacman -S ttf-hack
+$ pacman -S powerline
 ```
 
 Install a bunch of Media-Codecs
