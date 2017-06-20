@@ -38,7 +38,7 @@ $ systemctl enable tlp-sleep.service
 
 Add the GUI stuff
 ```bash
-$ pacman -S xorg xorg-server 
+$ pacman -S xorg xorg-xinit xorg-server 
 $ pacman -S rxvt-unicode
 $ pacman -S xfce4 xfce4-goodies
 $ pacman -S i3-wm i3blocks i3lock i3status

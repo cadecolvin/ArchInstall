@@ -20,7 +20,7 @@ systemctl enable tlp-sleep.service
 tlp start
 
 # Install the GUI stuff
-pacman -S  xorg xorg-server 
+pacman -S  xorg xorg-xinit xorg-server 
 pacman -S i3-wm i3blocks i3lock i3status
 pacman -S rxvt-unicode
 
