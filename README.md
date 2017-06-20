@@ -69,6 +69,11 @@ Be sure to add 'wheel' as a sudoer. The sudoer file **MUST** be edited using the
 $ visudo
 ```
 
+Set the password for the newly created user
+```bash
+$ passwd $username
+```
+
 ## Dotfile Setup
 Exit the current session and log back in as the created user.
 Clone the dotfiles from this [repo](https://github.com/cadecolvin/dotfiles) and run the setup script.
