@@ -14,10 +14,13 @@ else
 fi
 
 # Base Packages
-echo "Installing Base Packages..."
+echo "Installing Git..."
 pacman -Sq --noconfirm git > /dev/null
+echo "Installing Linux Header stuff..."
 pacman -Sq --noconfirm base-devel dkms linux-headers > /dev/null
+echo "Installing Cowsay..."
 pacman -Sq --noconfirm cowsay fortune-mod > /dev/null
+echo "Installing misc required stuff..."
 pacman -Sq --noconfirm htop openssh python sudo vim zsh > /dev/null
 
 if [ $INSTALL_TYPE = "l" ]; then
@@ -41,7 +44,7 @@ fi
 echo "Installing xorg..."
 pacman -Sq --noconfirm xorg xorg-xinit xorg-server xfce4-power-manager > /dev/null
 echo "Installing i3..."
-pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status dmenu > /dev/null
+pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status dmenu nitrogen > /dev/null
 echo "Installing URxvt..."
 pacman -Sq --noconfirm rxvt-unicode > /dev/null
 
@@ -65,6 +68,7 @@ visudo
 
 # Set my password
 clear
+echo "Set password for ccolvin"
 passwd ccolvin
 
 echo "You did it! Now get out of root! :)"

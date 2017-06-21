@@ -41,6 +41,7 @@ $ pacman -S rxvt-unicode
 $ pacman -S xfce4 xfce4-goodies
 $ pacman -S i3-wm i3blocks i3lock i3status
 $ pacman -S dmenu
+$ pacman -S nitrogen
 ```
 
 Add the fonts that I like
