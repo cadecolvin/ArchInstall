@@ -6,11 +6,11 @@ INSTALL_TYPE="default"
 if [[ $# -eq 0 ]] ; then
     read -p "Is this a [V]irtualBox install or a [L]aptop install? " vl
     case $vl in
-        [Vv]* ) $INSTALL_TYPE="v";;
-        [Ll]* ) $INSTALL_TYPE="l";;
+        [Vv]* ) INSTALL_TYPE="v";;
+        [Ll]* ) INSTALL_TYPE="l";;
     esac
 else
-    $INSTALL_TYPE=$1
+    INSTALL_TYPE=$1
 fi
 
 # Base Packages
