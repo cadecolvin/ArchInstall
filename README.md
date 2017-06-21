@@ -29,11 +29,9 @@ $ pacman -S wpa_supplicant wpa_actiond
 $ pacman -S wifi-menu
 ```
 
-Also, use TLP for power management
+Use xfce4 for power management
 ```bash
-$ pacman -S tlp
-$ systemctl enable tlp.service
-$ systemctl enable tlp-sleep.service
+$ pacman -S xfce4-power-manager
 ```
 
 Add the GUI stuff

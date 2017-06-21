@@ -31,10 +31,7 @@ if [ $INSTALL_TYPE = "l" ]; then
 
     # For Power Mangement
     echo "Installing Power Management..."
-    pacman -Sq --noconfirm tlp > /dev/null
-    systemctl enable tlp.service
-    systemctl enable tlp-sleep.service
-    tlp start
+    pacman -Sq --noconfirm xfce4-power-manager > /dev/null
 
 elif [ $INSTALL_TYPE = "v" ]; then
     # For VirtualBox
@@ -48,7 +45,7 @@ fi
 echo "Installing xorg..."
 pacman -Sq --noconfirm xorg xorg-xinit xorg-server  > /dev/null
 echo "Installing i3..."
-pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status > /dev/null
+pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status dmenu > /dev/null
 echo "Installing URxvt..."
 pacman -Sq --noconfirm rxvt-unicode > /dev/null
 
