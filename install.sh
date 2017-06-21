@@ -71,4 +71,7 @@ useradd -m -G wheel -s /bin/zsh ccolvin
 visudo
 
 # Set my password
+clear
 passwd ccolvin
+
+echo "You did it! Now get out of root! :)"
