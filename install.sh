@@ -1,5 +1,18 @@
 #!/bin/sh
 
+INSTALL_TYPE = "default"
+
+# Read in our options and prompt if required
+if [[ $# -eq 0 ]] ; then
+    read -p "Is thing a [V]irtualBox install or a [L]aptop install?" vl
+    case $vl in
+        [Vv]* ) $INSTALL_TYPE = "v";;
+        [Ll]* ) $INSTALL_TYPE = "l";;
+    esac
+else
+    $INSTALL_TYPE = $1
+fi
+
 # Base Packages
 echo -n "Installing Base Packages..."
 pacman -Sq --noconfirm git > /dev/null
@@ -8,22 +21,31 @@ pacman -Sq --noconfirm cowsay fortune-mod > /dev/null
 pacman -Sq --noconfirm openssh python sudo vim zsh > /dev/null
 echo "done!"
 
-# For WiFi on Macbook
-echo -n "Installing Wifi Packages..."
-pacman -Sq --noconfirm broadcom-wl-dkms > /dev/null
+if [ $INSTALL_TYPE -eq "l" ]; then
+    echo -n "Installing Wifi Packages..."
+    # For WiFi on Macbook
+    pacman -Sq --noconfirm broadcom-wl-dkms > /dev/null
 
-# For Wireless Network Management
-pacman -Sq --noconfirm wpa_supplicant wpa_actiond > /dev/null
-pacman -Sq --noconfirm wifi-menu > /dev/null
-echo "done!"
+    # For Wireless Network Management
+    pacman -Sq --noconfirm wpa_supplicant wpa_actiond > /dev/null
+    pacman -Sq --noconfirm wifi-menu > /dev/null
+    echo "done!"
 
-# For Power Mangement
-echo -n "Installing Power Management..."
-pacman -Sq --noconfirm tlp > /dev/null
-systemctl enable tlp.service
-systemctl enable tlp-sleep.service
-tlp start
-echo "done!"
+    # For Power Mangement
+    echo -n "Installing Power Management..."
+    pacman -Sq --noconfirm tlp > /dev/null
+    systemctl enable tlp.service
+    systemctl enable tlp-sleep.service
+    tlp start
+    echo "done!"
+elif [ $INSTALL_TYPE -eq "v" ]; then
+    # For VirtualBox
+    echo -n "Install VirtualBox requirements..."
+    pacman -Sq --noconfirm virtualbox-guest-dkms
+    pacman -Sq --noconfirm virtualbox-guest-modules-arch
+    pacman -Sq --noconfirm virtualbox-guest-utils
+    echo "done!"
+fi
 
 # Install the GUI stuff
 echo -n "Installing xorg..."
