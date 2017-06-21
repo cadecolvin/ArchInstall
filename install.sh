@@ -18,7 +18,7 @@ echo "Installing Base Packages..."
 pacman -Sq --noconfirm git > /dev/null
 pacman -Sq --noconfirm base-devel dkms linux-headers > /dev/null
 pacman -Sq --noconfirm cowsay fortune-mod > /dev/null
-pacman -Sq --noconfirm openssh python sudo vim zsh > /dev/null
+pacman -Sq --noconfirm htop openssh python sudo vim zsh > /dev/null
 
 if [ $INSTALL_TYPE = "l" ]; then
     echo "Installing Wifi Packages..."
@@ -28,10 +28,6 @@ if [ $INSTALL_TYPE = "l" ]; then
     # For Wireless Network Management
     pacman -Sq --noconfirm wpa_supplicant wpa_actiond > /dev/null
     pacman -Sq --noconfirm wifi-menu > /dev/null
-
-    # For Power Mangement
-    echo "Installing Power Management..."
-    pacman -Sq --noconfirm xfce4-power-manager > /dev/null
 
 elif [ $INSTALL_TYPE = "v" ]; then
     # For VirtualBox
@@ -43,7 +39,7 @@ fi
 
 # Install the GUI stuff
 echo "Installing xorg..."
-pacman -Sq --noconfirm xorg xorg-xinit xorg-server  > /dev/null
+pacman -Sq --noconfirm xorg xorg-xinit xorg-server xfce4-power-manager > /dev/null
 echo "Installing i3..."
 pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status dmenu > /dev/null
 echo "Installing URxvt..."
