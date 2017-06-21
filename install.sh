@@ -1,37 +1,37 @@
 #!/bin/sh
 
 # Base Packages
-pacman -S git
-pacman -S base-devel dkms linux-headers
-pacman -S cowsay fortune-mod
-pacman -S openssh python sudo vim zsh
+pacman -Sq --noconfirm git
+pacman -Sq --noconfirm base-devel dkms linux-headers
+pacman -Sq --noconfirm cowsay fortune-mod
+pacman -Sq --noconfirm openssh python sudo vim zsh
 
 # For WiFi on Macbook
-pacman -S broadcom-wl-dkms
+pacman -Sq --noconfirm broadcom-wl-dkms
 
 # For Wireless Network Management
-pacman -S wpa_supplicant wpa_actiond
-pacman -S wifi-menu
+pacman -Sq --noconfirm wpa_supplicant wpa_actiond
+pacman -Sq --noconfirm wifi-menu
 
 # For Power Mangement
-pacman -S tlp
+pacman -Sq --noconfirm tlp
 systemctl enable tlp.service
 systemctl enable tlp-sleep.service
 tlp start
 
 # Install the GUI stuff
-pacman -S  xorg xorg-xinit xorg-server 
-pacman -S i3-wm i3blocks i3lock i3status
-pacman -S rxvt-unicode
+pacman -Sq --noconfirm xorg xorg-xinit xorg-server 
+pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status
+pacman -Sq --noconfirm rxvt-unicode
 
 # Install the fonts that I like
-pacman -S powerline
-pacman -S ttf-hack
+pacman -Sq --noconfirm powerline
+pacman -Sq --noconfirm ttf-hack
 
 # Install Media Codecs
-pacman -S exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2
-pacman -S libtheora libvorbis libxv wavpack x264 xvidcore flashplugin libdvdcss libdvdread libdvdnav
-pacman -S gecko-mediaplayer dvd+rw-tools dvdauthor dvgrab
+pacman -Sq --noconfirm exfat-utils fuse-exfat a52dec faac faad2 flac jasper lame libdca libdv gst-libav libmad libmpeg2
+pacman -Sq --noconfirm libtheora libvorbis libxv wavpack x264 xvidcore flashplugin libdvdcss libdvdread libdvdnav
+pacman -Sq --noconfirm gecko-mediaplayer dvd+rw-tools dvdauthor dvgrab
 
 # Add myself as a user
 useradd -m -G wheel -s /bin/zsh ccolvin
