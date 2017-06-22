@@ -13,24 +13,46 @@ else
     INSTALL_TYPE=$1
 fi
 
-# Base Packages
 echo "Installing Git..."
 pacman -Sq --noconfirm git > /dev/null
-echo "Installing Linux Header stuff..."
-pacman -Sq --noconfirm base-devel dkms linux-headers > /dev/null
+
+echo "Installing linux headers..."
+pacman -Sq --noconfirm linux-headers > /dev/null
+
+echo "Installing dkms..."
+pacman -Sq --noconfirm base-devel dkms > /dev/null
+
 echo "Installing Cowsay..."
 pacman -Sq --noconfirm cowsay fortune-mod > /dev/null
-echo "Installing misc required stuff..."
-pacman -Sq --noconfirm htop openssh python sudo vim zsh > /dev/null
+
+echo "Installing HTop..."
+pacman -Sq --noconfirm htop > /dev/null
+
+echo "Installing OpenSSH..."
+pacman -Sq --noconfirm openssh > /dev/null
+
+echo "Installing python..."
+pacman -Sq --noconfirm python > /dev/null
+
+echo "Installing sudo..."
+pacman -Sq --noconfirm sudo > /dev/null
+
+echo "Installing vim..."
+pacman -Sq --noconfirm vim > /dev/null
+
+echo "Installing zsh..."
+pacman -Sq --noconfirm zsh > /dev/null
 
 if [ $INSTALL_TYPE = "l" ]; then
-    echo "Installing Wifi Packages..."
-    # For WiFi on Macbook
+    echo "Installing Broadcom drivers..."
     pacman -Sq --noconfirm broadcom-wl-dkms > /dev/null
 
-    # For Wireless Network Management
+    echo "Installing wireless discovery tools..."
     pacman -Sq --noconfirm wpa_supplicant wpa_actiond > /dev/null
     pacman -Sq --noconfirm wifi-menu > /dev/null
+
+    echo "Installing TLP power manager..."
+    pacman -Sq --noconfirm tlp > /dev/null
 
 elif [ $INSTALL_TYPE = "v" ]; then
     # For VirtualBox
@@ -42,9 +64,17 @@ fi
 
 # Install the GUI stuff
 echo "Installing xorg..."
-pacman -Sq --noconfirm xorg xorg-xinit xorg-server xfce4-power-manager > /dev/null
+pacman -Sq --noconfirm xorg xorg-xinit xorg-server > /dev/null
+
 echo "Installing i3..."
-pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status dmenu nitrogen > /dev/null
+pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status > /dev/null
+
+echo "Installing dmenu..."
+pacman -Sq --noconfirm dmenu > /dev/null
+
+echo "Installing Nitrogen..."
+pacman -Sq --noconfirm nitrogen > /dev/null
+
 echo "Installing Terminator..."
 pacman -Sq --noconfirm terminator > /dev/null
 
