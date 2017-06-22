@@ -22,6 +22,7 @@ Continue by installing a few more essential programs.
 $ pacman -S base-devel dkms linux-headers
 ```
 
+## Laptop Applications
 If this is on a MacBook, install the following driver for wireless
 ```bash
 $ pacman -S broadcom-wl-dkms
@@ -33,11 +34,12 @@ $ pacman -S wpa_supplicant wpa_actiond
 $ pacman -S wifi-menu
 ```
 
-Use xfce4 for power management
+Use TLP for power management
 ```bash
-$ pacman -S xfce4-power-manager
+$ pacman -S tlp
 ```
 
+## User Interface
 Add the GUI stuff
 ```bash
 $ pacman -S xorg xorg-xinit xorg-server 
