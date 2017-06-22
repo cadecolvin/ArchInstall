@@ -8,18 +8,27 @@ $ curl https://raw.githubusercontent.com/cadecolvin/ArchInstall/master/install.s
 ## Base Packages
 Add a bunch of base packages
 ```bash
+$ pacman -S cowsay
+$ pacman -S fortune-mod
 $ pacman -S git
 $ pacman -S openssh
 $ pacman -S python
 $ pacman -S sudo
 $ pacman -S vim
 $ pacman -S zsh
-$ pacman -S cowsay fortune-mod
 ```
+
+Install the long term support Linux Kernel
+```bash
+$ pacman -S linux-lts
+$ pacman -S linux-lts-headers
+```
+Be sure to update the Arch Linux EFI entry to reference the new kernel.
 
 Continue by installing a few more essential programs.
 ```bash
-$ pacman -S base-devel dkms linux-headers
+$ pacman -S base-devel
+$ pacman -S dkms
 ```
 
 ## Laptop Applications
@@ -30,7 +39,8 @@ $ pacman -S broadcom-wl-dkms
 
 If installing on a laptop, the following programs will enable connecting to wireless networks.
 ```bash
-$ pacman -S wpa_supplicant wpa_actiond
+$ pacman -S wpa_supplicant
+$ pacman -S wpa_actiond
 $ pacman -S wifi-menu
 ```
 
@@ -43,10 +53,10 @@ $ pacman -S tlp
 Add the GUI stuff
 ```bash
 $ pacman -S xorg xorg-xinit xorg-server 
-$ pacman -S terminator
 $ pacman -S i3-wm i3blocks i3lock i3status
 $ pacman -S dmenu
 $ pacman -S nitrogen
+$ pacman -S terminator
 ```
 
 Add the fonts that I like
