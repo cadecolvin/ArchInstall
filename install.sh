@@ -16,8 +16,11 @@ fi
 echo "Installing Git..."
 pacman -Sq --noconfirm git > /dev/null
 
-echo "Installing linux headers..."
-pacman -Sq --noconfirm linux-headers > /dev/null
+echo "Installing linux lts..."
+pacman -Sq --noconfirm linux-lts > /dev/null
+
+echo "Installing linux lts headers..."
+pacman -Sq --noconfirm linux-lts-headers > /dev/null
 
 echo "Installing dkms..."
 pacman -Sq --noconfirm base-devel dkms > /dev/null
