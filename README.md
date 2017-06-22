@@ -37,8 +37,7 @@ $ pacman -S xfce4-power-manager
 Add the GUI stuff
 ```bash
 $ pacman -S xorg xorg-xinit xorg-server 
-$ pacman -S rxvt-unicode
-$ pacman -S xfce4 xfce4-goodies
+$ pacman -S terminator
 $ pacman -S i3-wm i3blocks i3lock i3status
 $ pacman -S dmenu
 $ pacman -S nitrogen

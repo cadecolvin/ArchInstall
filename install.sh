@@ -45,8 +45,8 @@ echo "Installing xorg..."
 pacman -Sq --noconfirm xorg xorg-xinit xorg-server xfce4-power-manager > /dev/null
 echo "Installing i3..."
 pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status dmenu nitrogen > /dev/null
-echo "Installing URxvt..."
-pacman -Sq --noconfirm rxvt-unicode > /dev/null
+echo "Installing Terminator..."
+pacman -Sq --noconfirm terminator > /dev/null
 
 # Install the fonts that I like
 echo "Installing fonts..."
