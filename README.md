@@ -6,16 +6,20 @@ $ curl https://raw.githubusercontent.com/cadecolvin/ArchInstall/master/install.s
 ```
 
 ## Base Packages
-Before anything else, Git must be installed.
+Add a bunch of base packages
 ```bash
 $ pacman -S git
+$ pacman -S openssh
+$ pacman -S python
+$ pacman -S sudo
+$ pacman -S vim
+$ pacman -S zsh
+$ pacman -S cowsay fortune-mod
 ```
 
-Once Git is installed, continue by installing a few more essential programs.
+Continue by installing a few more essential programs.
 ```bash
 $ pacman -S base-devel dkms linux-headers
-$ pacman -S cowsay fortune-mod
-$ pacman -S openssh python sudo vim zsh
 ```
 
 If this is on a MacBook, install the following driver for wireless
