@@ -18,12 +18,11 @@ $ pacman -S vim
 $ pacman -S zsh
 ```
 
-Install the long term support Linux Kernel
+Install the long term support Linux Kernel. Be sure to update the Arch Linux EFI entry when completed.
 ```bash
 $ pacman -S linux-lts
 $ pacman -S linux-lts-headers
 ```
-Be sure to update the Arch Linux EFI entry to reference the new kernel.
 
 Continue by installing a few more essential programs.
 ```bash
