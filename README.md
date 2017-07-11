@@ -57,6 +57,9 @@ If using XFCE4 install the following
 ```bash
 $ pacman -S xfce4
 $ pacman -S xfce4-goodies
+$ pacman -S nautilus
+$ pacman -S arc-gtk-theme
+$ pacman -S arc-icon-theme
 ```
 
 Use Termite as my terminal

@@ -78,6 +78,13 @@ if [ $DESKTOP_TYPE = "x" ]; then
     pacman -Sq --noconfirm xfce4 > /dev/null
     pacman -Sq --noconfirm xfce4-goodies > /dev/null
 
+    echo "Installing nautilus..."
+    pacman -Sq --noconfirm nautilus > /dev/null
+
+    echo "Installing arc theme..."
+    pacman -Sq --noconfirm arc-gtk-theme
+    pacman -Sq --noconfirm arc-icon-theme
+
 elif [ $DESKTOP_TYPE = "i" ]; then
     echo "Installing i3..."
     pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status > /dev/null
