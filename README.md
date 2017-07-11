@@ -8,13 +8,18 @@ $ curl https://raw.githubusercontent.com/cadecolvin/ArchInstall/master/install.s
 ## Base Packages
 Add a bunch of base packages
 ```bash
+$ pacman -S base-devel
 $ pacman -S cowsay
+$ pacman -S dkms
 $ pacman -S fortune-mod
 $ pacman -S git
 $ pacman -S openssh
 $ pacman -S python
 $ pacman -S sudo
 $ pacman -S vim
+$ pacman -S xorg
+$ pacman -S xorg-init
+$ pacman -S xorg-server
 $ pacman -S zsh
 ```
 
@@ -22,12 +27,6 @@ Install the long term support Linux Kernel. Be sure to update the Arch Linux EFI
 ```bash
 $ pacman -S linux-lts
 $ pacman -S linux-lts-headers
-```
-
-Continue by installing a few more essential programs.
-```bash
-$ pacman -S base-devel
-$ pacman -S dkms
 ```
 
 ## Laptop Applications
@@ -43,19 +42,31 @@ $ pacman -S wpa_actiond
 $ pacman -S wifi-menu
 ```
 
-Use TLP for power management
+## User Interface
+If using i3 install the following
 ```bash
+$ pacman -S i3-wm i3blocks i3lock i3status
+$ pacman -S i3blocks
+$ pacman -S i3lock
+$ pacman -S i3status
+$ pacman -S nitrogen
 $ pacman -S tlp
 ```
 
-## User Interface
-Add the GUI stuff
+If using XFCE4 install the following
 ```bash
-$ pacman -S xorg xorg-xinit xorg-server 
-$ pacman -S i3-wm i3blocks i3lock i3status
-$ pacman -S dmenu
-$ pacman -S nitrogen
+$ pacman -S xfce4
+$ pacman -S xfce4-goodies
+```
+
+Use Terminator as my terminal
+```bash
 $ pacman -S terminator
+```
+
+Use rofi as my launcher
+```bash
+$ pacman -S rofi
 ```
 
 Add the fonts that I like

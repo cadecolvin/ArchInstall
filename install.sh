@@ -1,6 +1,7 @@
 #!/bin/sh
 
 INSTALL_TYPE="default"
+DESKTOP_TYPE="default"
 
 # Read in our options and prompt if required
 if [[ $# -eq 0 ]] ; then
@@ -9,8 +10,14 @@ if [[ $# -eq 0 ]] ; then
         [Vv]* ) INSTALL_TYPE="v";;
         [Ll]* ) INSTALL_TYPE="l";;
     esac
+    read -p "Would you like to use [x]fce-4 or [i]3? " xi
+    case $xi in
+        [Xx]* ) DESKTOP_TYPE="x";;
+        [Ii]* ) DESKTOP_TYPE="i";;
+    esac
 else
     INSTALL_TYPE=$1
+    DESKTOP_TYPE=$2
 fi
 
 echo "Installing Git..."
@@ -54,9 +61,6 @@ if [ $INSTALL_TYPE = "l" ]; then
     pacman -Sq --noconfirm wpa_supplicant wpa_actiond > /dev/null
     pacman -Sq --noconfirm wifi-menu > /dev/null
 
-    echo "Installing TLP power manager..."
-    pacman -Sq --noconfirm tlp > /dev/null
-
 elif [ $INSTALL_TYPE = "v" ]; then
     # For VirtualBox
     echo "Install VirtualBox requirements..."
@@ -69,14 +73,24 @@ fi
 echo "Installing xorg..."
 pacman -Sq --noconfirm xorg xorg-xinit xorg-server > /dev/null
 
-echo "Installing i3..."
-pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status > /dev/null
+if [ $DESKTOP_TYPE = "x" ]; then
+    echo "Installing XFCE-4..."
+    pacman -Sq --noconfirm xfce4 > /dev/null
+    pacman -Sq --noconfirm xfce4-goodies > /dev/null
 
-echo "Installing dmenu..."
-pacman -Sq --noconfirm dmenu > /dev/null
+elif [ $DESKTOP_TYPE = "i" ]; then
+    echo "Installing i3..."
+    pacman -Sq --noconfirm i3-wm i3blocks i3lock i3status > /dev/null
 
-echo "Installing Nitrogen..."
-pacman -Sq --noconfirm nitrogen > /dev/null
+    echo "Installing Nitrogen..."
+    pacman -Sq --noconfirm nitrogen > /dev/null
+
+    echo "Installing TLP power manager..."
+    pacman -Sq --noconfirm tlp > /dev/null
+fi
+
+echo "Installing rofi..."
+pacman -Sq --noconfirm rofi > /dev/null
 
 echo "Installing Terminator..."
 pacman -Sq --noconfirm terminator > /dev/null
