@@ -59,9 +59,9 @@ $ pacman -S xfce4
 $ pacman -S xfce4-goodies
 ```
 
-Use Terminator as my terminal
+Use Termite as my terminal
 ```bash
-$ pacman -S terminator
+$ pacman -S termite
 ```
 
 Use rofi as my launcher

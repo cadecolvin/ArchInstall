@@ -92,8 +92,8 @@ fi
 echo "Installing rofi..."
 pacman -Sq --noconfirm rofi > /dev/null
 
-echo "Installing Terminator..."
-pacman -Sq --noconfirm terminator > /dev/null
+echo "Installing Termite..."
+pacman -Sq --noconfirm termite > /dev/null
 
 # Install the fonts that I like
 echo "Installing fonts..."
