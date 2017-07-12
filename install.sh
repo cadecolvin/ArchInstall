@@ -53,6 +53,10 @@ pacman -Sq --noconfirm vim > /dev/null
 echo "Installing zsh..."
 pacman -Sq --noconfirm zsh > /dev/null
 
+echo "Installing xorg..."
+pacman -S xorg xorg-xinit xorg-server
+
+# Install the Laptop/VM specific stuff
 if [ $INSTALL_TYPE = "l" ]; then
     echo "Installing Broadcom drivers..."
     pacman -Sq --noconfirm broadcom-wl-dkms > /dev/null
@@ -64,15 +68,11 @@ if [ $INSTALL_TYPE = "l" ]; then
 elif [ $INSTALL_TYPE = "v" ]; then
     # For VirtualBox
     echo "Install VirtualBox requirements..."
-    pacman -Sq --noconfirm virtualbox-guest-dkms > /dev/null
-    pacman -Sq --noconfirm virtualbox-guest-modules-arch > /dev/null
-    pacman -Sq --noconfirm virtualbox-guest-utils > /dev/null
+    pacman -S noconfirm virtualbox-guest-utils
+    pacman -S noconfirm virtualbox-guest-modules-arch
 fi
 
 # Install the GUI stuff
-echo "Installing xorg..."
-pacman -Sq --noconfirm xorg xorg-xinit xorg-server > /dev/null
-
 if [ $DESKTOP_TYPE = "x" ]; then
     echo "Installing XFCE-4..."
     pacman -Sq --noconfirm xfce4 > /dev/null
@@ -82,8 +82,8 @@ if [ $DESKTOP_TYPE = "x" ]; then
     pacman -Sq --noconfirm nautilus > /dev/null
 
     echo "Installing arc theme..."
-    pacman -Sq --noconfirm arc-gtk-theme
-    pacman -Sq --noconfirm arc-icon-theme
+    pacman -Sq --noconfirm arc-gtk-theme > /dev/null
+    pacman -Sq --noconfirm arc-icon-theme > /dev/null
 
 elif [ $DESKTOP_TYPE = "i" ]; then
     echo "Installing i3..."
