@@ -68,8 +68,7 @@ if [ $INSTALL_TYPE = "l" ]; then
 elif [ $INSTALL_TYPE = "v" ]; then
     # For VirtualBox
     echo "Install VirtualBox requirements..."
-    pacman -S noconfirm virtualbox-guest-utils
-    pacman -S noconfirm virtualbox-guest-modules-arch
+    pacman -S virtualbox-guest-utils
 fi
 
 # Install the GUI stuff
