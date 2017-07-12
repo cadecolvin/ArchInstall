@@ -100,7 +100,7 @@ echo "Installing rofi..."
 pacman -Sq --noconfirm rofi > /dev/null
 
 echo "Installing Termite..."
-pacman -Sq --noconfirm termite > /dev/null
+pacman -S termite
 
 # Install the fonts that I like
 echo "Installing fonts..."
